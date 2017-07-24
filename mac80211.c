@@ -731,11 +731,12 @@ static int mwl_mac80211_ampdu_action(struct ieee80211_hw *hw,
 			if (!rc) {
 				stream->state = AMPDU_STREAM_ACTIVE;
 				sta_info->check_ba_failed[tid] = 0;
-				if (priv->tx_amsdu)
-					sta_info->is_amsdu_allowed =
-						params->amsdu;
-				else
-					sta_info->is_amsdu_allowed = false;
+				//if (priv->tx_amsdu)
+				//	sta_info->is_amsdu_allowed =
+				//		params->amsdu;
+				//else
+				//	sta_info->is_amsdu_allowed = false;
+				sta_info->is_amsdu_allowed = false;
 			} else {
 				spin_unlock_bh(&priv->stream_lock);
 				mwl_fwcmd_destroy_ba(hw, stream,
