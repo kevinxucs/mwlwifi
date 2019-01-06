@@ -44,9 +44,9 @@ static int mwl_vendor_cmd_set_bf_type(struct wiphy *wiphy,
 
 	rc = nla_parse(tb, MWL_VENDOR_ATTR_MAX, data, data_len,
 		       mwl_vendor_attr_policy
-#if (defined(LINUX_BACKPORT) || (LINUX_VERSION_CODE >=KERNEL_VERSION(4,12,0)))
-               , NULL
-#endif
+//#if (defined(LINUX_BACKPORT) || (LINUX_VERSION_CODE >=KERNEL_VERSION(4,12,0)))
+//               , NULL
+//#endif
                );
 	if (rc)
 		return rc;
